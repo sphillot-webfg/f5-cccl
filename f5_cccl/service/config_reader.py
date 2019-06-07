@@ -67,18 +67,6 @@ class ServiceConfigReader(object):
         """
         config_resource = None
 
-        # Update the object with metadata
-        if user_agent is not None:
-
-            metadata = {
-                'metadata': [{
-                    'name': 'user_agent',
-                    'persist': 'true',
-                    'value': user_agent
-                }]
-            }
-            obj.update(metadata)
-
         try:
             if default_route_domain is not None:
                 config_resource = resource_type(
